@@ -47,7 +47,7 @@ cv2.drawContours(image, [screenCnt], -1, (0, 255, 0), 2)
 
 # apply the four point transform to obtain a top-down
 # view of the original image
-wraper = transform_points(original,screenCnt.reshape(4, 2) * ratio)
+wraper = transform_poins(original,screenCnt.reshape(4, 2) * ratio)
 #convert the warped image to grayscale, then threshold it to give it that 'black and white' paper effect
 wraper = cv2.cvtColor(wraper,cv2.COLOR_BGR2GRAY)
 T = threshold_local(wraper,11,offset=10,method="gaussian")
